@@ -11,7 +11,7 @@ Library for Unity to use Koeiromap
 5. Click `Add`
 
 ## Unity Package
-1. Download the latest release from the [releases page]()
+1. Download the latest release from the [releases page](https://github.com/ayutaz/koeiromap-unity/releases)
 2. Import the package into your project
 
 # requirements
