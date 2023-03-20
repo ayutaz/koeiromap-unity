@@ -9,7 +9,7 @@ Japanese README is [here](README_JP.md).
 1. Open the Package Manager
 2. Click the `+` button in the top left corner
 3. Select `Add package from git URL...`
-4. Add URL for `https://github.com/ayutaz/koeiromap-unity.git?path=Assets/Koeiromap/Scripts`
+4. Add URL for `https://github.com/ayutaz/koeiromap-unity.git?path=Assets/KoeiromapUnity/Scripts`
 5. Click `Add`
 
 ## Unity Package
