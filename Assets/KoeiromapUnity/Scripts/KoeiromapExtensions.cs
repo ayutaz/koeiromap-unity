@@ -9,15 +9,22 @@ using UnityEngine.Networking;
 
 namespace KoeiromapUnity.Scripts
 {
-    public class KoeiromapExtensions
+    public static class KoeiromapExtensions
     {
         private const string ApiUrl = "https://api.rinna.co.jp/models/cttse/koeiro";
 
         public static async UniTask<VoiceResult> GetVoice(VoiceParam voiceParameters, CancellationToken token)
         {
+            var option = new Option(Application.persistentDataPath, "tmpWavBase64", AudioType.WAV);
+            return await GetVoice(voiceParameters, token, option);
+        }
+
+        public static async UniTask<VoiceResult> GetVoice(VoiceParam voiceParameters, CancellationToken token,
+            Option option)
+        {
             var response = await SendVoiceRequest(voiceParameters, token);
             var base64Data = ExtractBase64AudioData(response);
-            var audioClip = await ConvertBase64ToAudioClip(base64Data);
+            var audioClip = await ConvertBase64ToAudioClip(base64Data, option);
             return new VoiceResult
             {
                 audioClip = audioClip,
@@ -44,12 +51,13 @@ namespace KoeiromapUnity.Scripts
             return audio[(audio.IndexOf(",", StringComparison.Ordinal) + 1)..];
         }
 
-        private static async UniTask<AudioClip> ConvertBase64ToAudioClip(string base64EncodedWavString)
+        private static async UniTask<AudioClip> ConvertBase64ToAudioClip(string base64EncodedWavString, Option option)
         {
             var audioBytes = Convert.FromBase64String(base64EncodedWavString);
-            var tempPath = Path.Combine(Application.persistentDataPath, "tmpWavBase64.wav");
+            var tempPath = Path.Combine(option.SaveFolderPath, $"{option.FileName}{option.AudioFileExtension()}");
+            if (!Directory.Exists(option.SaveFolderPath)) Directory.CreateDirectory(option.SaveFolderPath);
             await File.WriteAllBytesAsync(tempPath, audioBytes);
-            using var request = UnityWebRequestMultimedia.GetAudioClip(tempPath, AudioType.WAV);
+            using var request = UnityWebRequestMultimedia.GetAudioClip(tempPath, option.AudioType);
             await request.SendWebRequest();
             if (request.result.Equals(UnityWebRequest.Result.ConnectionError))
             {

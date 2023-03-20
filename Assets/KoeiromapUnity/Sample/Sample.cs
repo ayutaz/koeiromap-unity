@@ -24,8 +24,9 @@ namespace KoeiromapUnity.Sample
                 style = "talk",
                 seed = "1234567890"
             };
+            var option = new Option($"{Application.dataPath}/voice", AudioType.WAV);
             var token = this.GetCancellationTokenOnDestroy();
-            var voice = await KoeiromapExtensions.GetVoice(voiceParam, token);
+            var voice = await KoeiromapExtensions.GetVoice(voiceParam, token, option);
             Debug.Log("Phonemes: " + string.Join(",", voice.phonemes) + ",seed: " + voice.seed);
             _audioSource.clip = voice.audioClip;
             _audioSource.Play();
