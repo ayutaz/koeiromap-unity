@@ -35,7 +35,6 @@ namespace KoeiromapUnity.Scripts
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/json");
             await request.SendWebRequest().WithCancellation(token);
-            Debug.Log(request.downloadHandler.text);
             return JsonUtility.FromJson<VoiceResponse>(request.downloadHandler.text);
         }
 
