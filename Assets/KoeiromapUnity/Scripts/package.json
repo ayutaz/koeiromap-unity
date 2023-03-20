@@ -1,0 +1,15 @@
+﻿{
+  "name": "jp.ayutaz.koeiromap-unity" ,
+  "displayName": "KoeiromapUnity" ,
+  "version": "0.1.0" ,
+  "unity": "2021.3" ,
+  "description": "Library for Unity to use Koeiromap" ,
+  "keywords": [
+    "koeiromap"
+  ] ,
+  "license": "MIT" ,
+  "licensesUrl": "https://github.com/ayutaz/koeiromap-unity/blob/main/LICENSE" ,
+  "dependencies": {
+    "com.cysharp.unitask": "2.3.3"
+  }
+}
