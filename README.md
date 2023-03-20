@@ -18,3 +18,12 @@ Japanese README is [here](README_JP.md).
 
 # requirements
 * Unity 2021.3.x or later
+* [UniTask](https://github.com/Cysharp/UniTask)
+
+## 3rd Party Notices
+
+See [NOTICE](https://github.com/ayutaz/koeiromap-unity/NOTICE.md).
+
+## License
+
+[MIT License](https://github.com/ayutaz/koeiromap-unity/LICENSE)
