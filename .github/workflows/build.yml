@@ -27,6 +27,7 @@ jobs:
       with:
         lfs: true
         clean: false
+        fetch-depth: 0
 
 #     Cache
     - uses: actions/cache@v3.3.1
