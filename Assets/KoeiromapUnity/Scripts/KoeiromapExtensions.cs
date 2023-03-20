@@ -35,7 +35,6 @@ namespace KoeiromapUnity.Scripts
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/json");
             await request.SendWebRequest().WithCancellation(token);
-            Debug.Log(request.downloadHandler.text);
             return JsonUtility.FromJson<VoiceResponse>(request.downloadHandler.text);
         }
 
@@ -50,9 +49,8 @@ namespace KoeiromapUnity.Scripts
             var audioBytes = Convert.FromBase64String(base64EncodedWavString);
             var tempPath = Path.Combine(Application.persistentDataPath, "tmpWavBase64.wav");
             await File.WriteAllBytesAsync(tempPath, audioBytes);
-            var request = UnityWebRequestMultimedia.GetAudioClip(tempPath, AudioType.WAV);
-            var asyncOperation = request.SendWebRequest();
-            await asyncOperation;
+            using var request = UnityWebRequestMultimedia.GetAudioClip(tempPath, AudioType.WAV);
+            await request.SendWebRequest();
             if (request.result.Equals(UnityWebRequest.Result.ConnectionError))
             {
                 Debug.LogError(request.error);
