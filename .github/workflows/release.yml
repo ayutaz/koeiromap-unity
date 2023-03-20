@@ -1,0 +1,56 @@
+﻿name: Release
+
+env:
+  TARGET_FILE: ./Assets/KoeiromapUnity/Scripts/package.json
+  FILE_NAME: "KoeiromapUnity"
+  BUILD_METHOD: "PackageExporter.Export"
+
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch: {}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - .
+        unityVersion:
+          - 2021.3.16f1
+        targetPlatform:
+          - StandaloneWindows64
+    timeout-minutes: 15
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.4.0
+      - name: Cache
+        uses: actions/cache@v3.3.1
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+      - name: Build package
+        id: build
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          buildName: ${{ env.FILE_NAME }}.unitypackage
+          buildMethod: ${{ env.BUILD_METHOD }}
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          generate_release_notes: true
+          name: ${{ github.event.pull_request.body }}
+          tag_name: ${{ github.event.pull_request.title }}
+          prerelease: false
