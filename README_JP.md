@@ -1,13 +1,13 @@
 # コーエーロマップユニティ
 
-Koeiromapを使用するためのUnity用ライブラリです。
+Koeiromapを利用するためのUnity用ライブラリ
 
 # インストール
 ## UPM
 1. パッケージマネージャーを開く
 2. 左上にある`+`ボタンをクリックする
 3. git URLからパッケージを追加...`」を選択します。
-4. `https://github.com/ayutaz/koeiromap-unity.git?path=Assets/Koeiromap/Scripts` のURLを追加する。
+4. https://github.com/ayutaz/koeiromap-unity.git?path=Assets/Koeiromap/Scripts`のURLを追加する。
 5. Add`をクリックします。
 
 ## Unityパッケージ
@@ -16,3 +16,12 @@ Koeiromapを使用するためのUnity用ライブラリです。
 
 # 要件
 * Unity 2021.3.x またはそれ以降
+* [UniTask](https://github.com/Cysharp/UniTask)
+
+## サードパーティーのお知らせ
+
+[NOTICE](https://github.com/ayutaz/koeiromap-unity/NOTICE.md)をご参照ください。
+
+## ライセンス
+
+[MITライセンス](https://github.com/ayutaz/koeiromap-unity/LICENSE)
