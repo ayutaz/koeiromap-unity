@@ -26,7 +26,8 @@ namespace KoeiromapUnity.Sample
             };
             var token = this.GetCancellationTokenOnDestroy();
             var voice = await KoeiromapExtensions.GetVoice(voiceParam, token);
-            _audioSource.clip = voice;
+            Debug.Log("Phonemes: " + string.Join(",", voice.phonemes) + ",seed: " + voice.seed);
+            _audioSource.clip = voice.audioClip;
             _audioSource.Play();
         }
     }

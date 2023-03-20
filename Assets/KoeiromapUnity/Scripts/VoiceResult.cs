@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace KoeiromapUnity.Scripts
 {
     [Serializable]
-    public class VoiceResponse
+    public class VoiceResult
     {
-        public string audio;
+        public AudioClip audioClip;
         public List<string> phonemes;
         public int seed;
     }

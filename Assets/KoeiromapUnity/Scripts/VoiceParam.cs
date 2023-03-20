@@ -1,5 +1,8 @@
-﻿namespace KoeiromapUnity.Scripts
+﻿using System;
+
+namespace KoeiromapUnity.Scripts
 {
+    [Serializable]
     public class VoiceParam
     {
         public string text;
