@@ -4,6 +4,9 @@ Library for Unity to use Koeiromap
 
 Japanese README is [here](README_JP.md).
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 # Installation
 ## UPM
 1. Open the Package Manager

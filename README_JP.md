@@ -2,6 +2,9 @@
 
 Koeiromapを利用するためのUnity用ライブラリ
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 # インストール
 ## UPM
 1. パッケージマネージャーを開く
