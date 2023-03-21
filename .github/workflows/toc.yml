@@ -1,6 +1,5 @@
 on:
   pull_request:
-    types: closed
 
 name: TOC Generator
 jobs:
