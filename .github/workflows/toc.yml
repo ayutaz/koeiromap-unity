@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    types: closed
+
+name: TOC Generator
+jobs:
+  generateTOC:
+    name: TOC Generator
+    runs-on: ubuntu-latest
+    steps:
+      - name: TOC Generator
+        uses: technote-space/toc-generator@v4.0.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
