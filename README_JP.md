@@ -1,4 +1,4 @@
-# コーエーロマップユニティ
+# Koeiromap Unity
 
 Koeiromapを利用するためのUnity用ライブラリ
 
@@ -13,7 +13,7 @@ Koeiromapを利用するためのUnity用ライブラリ
 4. https://github.com/ayutaz/koeiromap-unity.git?path=Assets/KoeiromapUnity/Scripts` のURLを追加する。
 5. Add`をクリックします。
 
-## Unityパッケージ
+## Unity Package
 1. [リリースページ](https://github.com/ayutaz/koeiromap-unity/releases)から最新リリースをダウンロードする。
 2. パッケージをプロジェクトにインポートする
 
