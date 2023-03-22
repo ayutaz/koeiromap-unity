@@ -19,15 +19,14 @@ namespace KoeiromapUnity.Sample
             var voiceParam = new VoiceParam
             {
                 text = "こんにちは",
-                speaker_x = 0.0f,
-                speaker_y = 0.0f,
+                speaker_x = 3.0f,
+                speaker_y = -3.0f,
                 style = "talk",
                 seed = "1234567890"
             };
-            var option = new Option($"{Application.dataPath}/voice", AudioType.WAV);
+            var option = new Option($"{Application.dataPath}/voice", AudioType.WAV, false);
             var token = this.GetCancellationTokenOnDestroy();
             var voice = await KoeiromapExtensions.GetVoice(voiceParam, token, option);
-            Debug.Log("Phonemes: " + string.Join(",", voice.phonemes) + ",seed: " + voice.seed);
             _audioSource.clip = voice.audioClip;
             _audioSource.Play();
         }
