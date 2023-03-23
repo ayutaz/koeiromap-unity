@@ -12,6 +12,8 @@ Library for Unity to use Koeiromap
   - [UPM](#upm)
   - [Unity Package](#unity-package)
 - [requirements](#requirements)
+- [how to use](#how-to-use)
+  - [Build for Windows](#build-for-windows)
   - [3rd Party Notices](#3rd-party-notices)
   - [License](#license)
 

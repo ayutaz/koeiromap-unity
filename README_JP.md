@@ -6,12 +6,14 @@ Koeiromapを利用するためのUnity用ライブラリ
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**目次**
+**Table of Contents**
 
 - [インストール](#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
   - [UPM](#upm)
   - [Unity Package](#unity-package)
 - [要件](#%E8%A6%81%E4%BB%B6)
+- [使い方](#%E4%BD%BF%E3%81%84%E6%96%B9)
+  - [Windows 用のビルド](#windows-%E7%94%A8%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89)
   - [サードパーティーのお知らせ](#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%BC%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B)
   - [ライセンス](#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
 
