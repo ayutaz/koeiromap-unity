@@ -19,9 +19,10 @@ You can change the parameters and play any voice on the following screen from th
   - [Unity Package](#unity-package)
 - [requirements](#requirements)
 - [how to use](#how-to-use)
+  - [Sample Code](#sample-code)
   - [Build for Windows](#build-for-windows)
-  - [3rd Party Notices](#3rd-party-notices)
-  - [License](#license)
+- [3rd Party Notices](#3rd-party-notices)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
