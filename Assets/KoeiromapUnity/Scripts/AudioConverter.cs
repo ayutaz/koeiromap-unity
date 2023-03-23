@@ -31,9 +31,6 @@ namespace KoeiromapUnity.Scripts
         {
             if (memoryStream == null) throw new ArgumentNullException(nameof(memoryStream));
 
-            // MemoryStreamの位置をリセット
-            memoryStream.Seek(0, SeekOrigin.Begin);
-
             // NAudioライブラリを使用して、WAVデータを読み込みます
             using var reader = new WaveFileReader(memoryStream);
             if (reader.WaveFormat.Encoding != WaveFormatEncoding.IeeeFloat)
