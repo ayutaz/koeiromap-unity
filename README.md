@@ -2,7 +2,7 @@
 
 Library for Unity to use Koeiromap
 
-Japanese README is [here](README_JP.md).
+[日本語ドキュメント(Japanese Documents Available)](README_JP.md).
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -31,7 +31,13 @@ Japanese README is [here](README_JP.md).
 
 # requirements
 * Unity 2021.3.x or later
+  * IL2CPP(Windows)
 * [UniTask](https://github.com/Cysharp/UniTask)
+
+# how to use
+
+## Build for Windows
+* Switch to Windows platform and IL2CPP
 
 ## 3rd Party Notices
 

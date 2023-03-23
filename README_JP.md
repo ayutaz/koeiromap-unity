@@ -2,9 +2,11 @@
 
 Koeiromapを利用するためのUnity用ライブラリ
 
+[English Documents Available(英語ドキュメント)](README.md)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+**目次**
 
 - [インストール](#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
   - [UPM](#upm)
@@ -29,7 +31,13 @@ Koeiromapを利用するためのUnity用ライブラリ
 
 # 要件
 * Unity 2021.3.x またはそれ以降
+  * IL2CPP(Windows)
 * [UniTask](https://github.com/Cysharp/UniTask)
+
+# 使い方
+
+## Windows 用のビルド
+* WindowsプラットフォームとIL2CPPに切り替える
 
 ## サードパーティーのお知らせ
 
