@@ -54,3 +54,5 @@ Koeiromapを利用するためのUnity用ライブラリ
 ## ライセンス
 
 [MITライセンス](https://github.com/ayutaz/koeiromap-unity/LICENSE)
+
+[Font License](https://github.com/coz-m/MPLUS_FONTS/blob/master/OFL.txt)

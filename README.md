@@ -54,3 +54,5 @@ See [NOTICE](https://github.com/ayutaz/koeiromap-unity/NOTICE.md).
 ## License
 
 [MIT License](https://github.com/ayutaz/koeiromap-unity/LICENSE)
+
+[Font License](https://github.com/coz-m/MPLUS_FONTS/blob/master/OFL.txt)
