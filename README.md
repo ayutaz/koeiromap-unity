@@ -2,7 +2,13 @@
 
 Library for Unity to use Koeiromap
 
-Japanese README is [here](README_JP.md).
+[日本語ドキュメント(Japanese Documents Available)](README_JP.md).
+
+## Demo
+
+You can change the parameters and play any voice on the following screen from the [demo page](https://ayutaz.github.io/koeiromap-unity/WebGL/).
+
+![](Docs/demo_en.jpg)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -12,6 +18,8 @@ Japanese README is [here](README_JP.md).
   - [UPM](#upm)
   - [Unity Package](#unity-package)
 - [requirements](#requirements)
+- [how to use](#how-to-use)
+  - [Build for Windows](#build-for-windows)
   - [3rd Party Notices](#3rd-party-notices)
   - [License](#license)
 
@@ -31,7 +39,13 @@ Japanese README is [here](README_JP.md).
 
 # requirements
 * Unity 2021.3.x or later
+  * IL2CPP(Windows)
 * [UniTask](https://github.com/Cysharp/UniTask)
+
+# how to use
+
+## Build for Windows
+* Switch to Windows platform and IL2CPP
 
 ## 3rd Party Notices
 
@@ -40,3 +54,5 @@ See [NOTICE](https://github.com/ayutaz/koeiromap-unity/NOTICE.md).
 ## License
 
 [MIT License](https://github.com/ayutaz/koeiromap-unity/LICENSE)
+
+[Font License](https://github.com/coz-m/MPLUS_FONTS/blob/master/OFL.txt)
