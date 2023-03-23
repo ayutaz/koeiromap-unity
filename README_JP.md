@@ -2,13 +2,13 @@
 
 Koeiromapを利用するためのUnity用ライブラリ
 
+[English Documents Available(英語ドキュメント)](README.md)
+
 ## Demo
 
 [デモページ](https://ayutaz.github.io/koeiromap-unity/WebGL/)から以下のような画面でパラメータを変更して、任意の声を再生することができます。
 
 ![](Docs/demo_jp.jpg)
-
-[English Documents Available(英語ドキュメント)](README.md)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
