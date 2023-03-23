@@ -13,7 +13,7 @@ namespace KoeiromapUnity.Scripts
             IsStream = isStream;
         }
 
-        public Option(string savePath, AudioType audioType, bool isStream)
+        public Option(string savePath, AudioType audioType = AudioType.WAV, bool isStream = true)
         {
             SaveFolderPath = savePath[..savePath.LastIndexOf("/", StringComparison.Ordinal)];
             FileName = savePath[(savePath.LastIndexOf("/", StringComparison.Ordinal) + 1)..];
