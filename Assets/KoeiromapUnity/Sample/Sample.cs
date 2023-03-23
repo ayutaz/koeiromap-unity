@@ -1,5 +1,4 @@
 using System.Threading;
-using Cysharp.Threading.Tasks;
 using KoeiromapUnity.Scripts;
 using TMPro;
 using UnityEngine;
@@ -19,12 +18,12 @@ namespace KoeiromapUnity.Sample
         [SerializeField] private TMP_Dropdown talkStyleDropdown;
         [SerializeField] private TMP_InputField seed;
         [SerializeField] private Button playVoiceButton;
-        private CancellationToken _token;
+        private CancellationTokenSource _cancellationTokenSource;
 
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
-            _token = this.GetCancellationTokenOnDestroy();
+            _cancellationTokenSource = new CancellationTokenSource();
         }
 
         private void Start()
@@ -57,10 +56,16 @@ namespace KoeiromapUnity.Sample
                     seed = seed.text?.Length > 0 ? seed.text : Random.Range(-99999, 99999).ToString()
                 };
                 var option = new Option($"{Application.dataPath}/voice");
-                var voice = await KoeiromapExtensions.GetVoice(voiceParam, _token, option);
+                var voice = await KoeiromapExtensions.GetVoice(voiceParam, _cancellationTokenSource.Token, option);
                 _audioSource.clip = voice.audioClip;
                 _audioSource.Play();
             });
+        }
+
+        private void OnDestroy()
+        {
+            _cancellationTokenSource?.Cancel();
+            _cancellationTokenSource?.Dispose();
         }
     }
 }
