@@ -19,9 +19,10 @@ You can change the parameters and play any voice on the following screen from th
   - [Unity Package](#unity-package)
 - [requirements](#requirements)
 - [how to use](#how-to-use)
+  - [Sample Code](#sample-code)
   - [Build for Windows](#build-for-windows)
-  - [3rd Party Notices](#3rd-party-notices)
-  - [License](#license)
+- [3rd Party Notices](#3rd-party-notices)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -44,14 +45,33 @@ You can change the parameters and play any voice on the following screen from th
 
 # how to use
 
+## Sample Code
+
+``` csharp
+
+var voiceParam = new VoiceParam
+{
+    text = "こんにちは",
+    speaker_x = 3f,
+    speaker_y = 3f,
+    style = "talk",
+    seed = "12345"
+};
+var option = new Option($"{Application.dataPath}/voice");
+var voice = await KoeiromapExtensions.GetVoice(voiceParam, _token, option);
+_audioSource.clip = voice.audioClip;
+_audioSource.Play();
+
+```
+
 ## Build for Windows
 * Switch to Windows platform and IL2CPP
 
-## 3rd Party Notices
+# 3rd Party Notices
 
-See [NOTICE](https://github.com/ayutaz/koeiromap-unity/NOTICE.md).
+See [NOTICE](NOTICE.md).
 
-## License
+# License
 
 [MIT License](https://github.com/ayutaz/koeiromap-unity/LICENSE)
 
