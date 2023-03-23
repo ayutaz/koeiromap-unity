@@ -44,14 +44,33 @@ Koeiromapを利用するためのUnity用ライブラリ
 
 # 使い方
 
+## サンプルコード
+
+``` csharp
+
+var voiceParam = new VoiceParam
+{
+    text = "こんにちは",
+    speaker_x = 3f,
+    speaker_y = 3f,
+    style = "talk",
+    seed = "12345"
+};
+var option = new Option($"{Application.dataPath}/voice");
+var voice = await KoeiromapExtensions.GetVoice(voiceParam, _token, option);
+_audioSource.clip = voice.audioClip;
+_audioSource.Play();
+
+```
+
 ## Windows 用のビルド
 * WindowsプラットフォームとIL2CPPに切り替える
 
-## サードパーティーのお知らせ
+# サードパーティーのお知らせ
 
 [NOTICE](https://github.com/ayutaz/koeiromap-unity/NOTICE.md)をご参照ください。
 
-## ライセンス
+# ライセンス
 
 [MITライセンス](https://github.com/ayutaz/koeiromap-unity/LICENSE)
 
