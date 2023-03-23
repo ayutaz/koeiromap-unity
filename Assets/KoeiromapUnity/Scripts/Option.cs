@@ -5,56 +5,47 @@ namespace KoeiromapUnity.Scripts
 {
     public class Option
     {
-        public Option(string saveFolderPath, string fileName, AudioType audioType)
+        public Option(string saveFolderPath, string fileName, AudioType audioType, bool isStream = true)
         {
             SaveFolderPath = saveFolderPath;
             FileName = fileName;
             AudioType = audioType;
+            IsStream = isStream;
         }
 
-        public Option(string savePath, AudioType audioType)
+        public Option(string savePath, AudioType audioType = AudioType.WAV, bool isStream = true)
         {
             SaveFolderPath = savePath[..savePath.LastIndexOf("/", StringComparison.Ordinal)];
             FileName = savePath[(savePath.LastIndexOf("/", StringComparison.Ordinal) + 1)..];
             AudioType = audioType;
+            IsStream = isStream;
         }
 
         public string FileName { get; }
 
         public string SaveFolderPath { get; }
         public AudioType AudioType { get; }
+        public bool IsStream { get; }
 
         public string AudioFileExtension()
         {
-            switch (AudioType)
+            return AudioType switch
             {
-                case AudioType.ACC:
-                    return ".acc";
-                case AudioType.AIFF:
-                    return ".aiff";
-                case AudioType.IT:
-                    return ".it";
-                case AudioType.MOD:
-                    return ".mod";
-                case AudioType.MPEG:
-                    return ".mp3";
-                case AudioType.OGGVORBIS:
-                    return ".ogg";
-                case AudioType.S3M:
-                    return ".s3m";
-                case AudioType.WAV:
-                    return ".wav";
-                case AudioType.XM:
-                    return ".xm";
-                case AudioType.XMA:
-                    return ".xma";
-                case AudioType.VAG:
-                    return ".vag";
-                case AudioType.AUDIOQUEUE:
-                    return ".audioqueue";
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+                AudioType.ACC => ".acc",
+                AudioType.AIFF => ".aiff",
+                AudioType.IT => ".it",
+                AudioType.MOD => ".mod",
+                AudioType.MPEG => ".mp3",
+                AudioType.OGGVORBIS => ".ogg",
+                AudioType.S3M => ".s3m",
+                AudioType.WAV => ".wav",
+                AudioType.XM => ".xm",
+                AudioType.XMA => ".xma",
+                AudioType.VAG => ".vag",
+                AudioType.AUDIOQUEUE => ".audioqueue",
+                AudioType.UNKNOWN => throw new Exception("AudioType is unknown"),
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
     }
 }

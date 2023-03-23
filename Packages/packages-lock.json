@@ -257,6 +257,15 @@
       },
       "url": "https://package.openupm.com"
     },
+    "jp.ayutaz.webgl-input": {
+      "version": "https://github.com/ayutaz/WebGLInput.git?path=Assets/WebGLSupport/",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.textmeshpro": "3.0.6"
+      },
+      "hash": "03d6c9deddfa07bdd28761574317ca6613af6d4b"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
