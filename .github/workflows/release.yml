@@ -45,6 +45,7 @@ jobs:
           buildMethod: ${{ env.BUILD_METHOD }}
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
+          buildPath: src/Unity
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
