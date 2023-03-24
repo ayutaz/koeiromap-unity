@@ -3,6 +3,7 @@
 Library for Unity to use Koeiromap
 
 [日本語ドキュメント(Japanese Documents Available)](README_JP.md).
+[中文文档(Chinese Document)](README_CH.md)
 
 ## Demo
 

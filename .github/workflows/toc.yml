@@ -3,7 +3,7 @@ on:
 
 name: TOC Generator
 jobs:
-  generateTOC:
+  generateTOC_EN:
     name: TOC Generator
     runs-on: ubuntu-latest
     steps:
@@ -11,3 +11,25 @@ jobs:
         uses: technote-space/toc-generator@v4.0.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOC_TITLE: Table of Contents
+          TARGET_PATHS: README.md
+  generateTOC_JP:
+    name: TOC Generator
+    runs-on: ubuntu-latest
+    steps:
+      - name: TOC Generator
+        uses: technote-space/toc-generator@v4.0.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOC_TITLE: 目次
+          TARGET_PATHS: README_JP.md
+  generateTOC_CH:
+    name: TOC Generator
+    runs-on: ubuntu-latest
+    steps:
+      - name: TOC Generator
+        uses: technote-space/toc-generator@v4.0.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOC_TITLE: 目录
+          TARGET_PATHS: README_CH.md
