@@ -3,7 +3,7 @@
 env:
   TARGET_FILE: ./Assets/KoeiromapUnity/Scripts/package.json
   FILE_NAME: "KoeiromapUnity"
-  BUILD_METHOD: "PackageExporter.Export"
+  BUILD_METHOD: "KoeiromapUnity/Editor/PackageExporter.cs"
 
 
 on:
