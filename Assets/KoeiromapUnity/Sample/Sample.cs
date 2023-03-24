@@ -55,8 +55,7 @@ namespace KoeiromapUnity.Sample
                     style = talkStyleDropdown.options[talkStyleDropdown.value].text,
                     seed = seed.text?.Length > 0 ? seed.text : Random.Range(-99999, 99999).ToString()
                 };
-                var option = new Option($"{Application.dataPath}/voice");
-                var voice = await KoeiromapExtensions.GetVoice(voiceParam, _cancellationTokenSource.Token, option);
+                var voice = await Koeiromap.GetVoice(voiceParam, _cancellationTokenSource.Token);
                 _audioSource.clip = voice.audioClip;
                 _audioSource.Play();
             });
