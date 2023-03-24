@@ -43,6 +43,7 @@ namespace KoeiromapUnity.Scripts
 
             for (var i = 0; i < sampleCount; i++)
             for (var j = 0; j < channels; j++)
+
             {
                 var sample = reader.ReadNextSampleFrame()[j];
                 samples[i * channels + j] = sample;
