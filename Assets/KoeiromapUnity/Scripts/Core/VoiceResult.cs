@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace KoeiromapUnity.Scripts
+namespace KoeiromapUnity.Core
 {
     [Serializable]
     public class VoiceResult

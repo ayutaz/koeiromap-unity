@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KoeiromapUnity.Scripts
+namespace KoeiromapUnity.Core
 {
     [Serializable]
     public class VoiceParam
