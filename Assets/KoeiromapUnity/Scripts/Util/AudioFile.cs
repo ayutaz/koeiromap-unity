@@ -6,7 +6,7 @@ namespace KoeiromapUnity.Util
 {
     public class AudioFile
     {
-        public void Save(string path, AudioClip audioClip)
+        public static void Save(string path, AudioClip audioClip)
         {
             var extension = GetFileExtension(path);
             if (extension.Equals(".wav"))
