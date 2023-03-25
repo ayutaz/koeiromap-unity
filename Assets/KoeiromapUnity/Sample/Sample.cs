@@ -1,5 +1,5 @@
 using System.Threading;
-using KoeiromapUnity.Scripts;
+using KoeiromapUnity.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KoeiromapUnity.Scripts
+namespace KoeiromapUnity.Core
 {
     [Serializable]
     public class VoiceResponse

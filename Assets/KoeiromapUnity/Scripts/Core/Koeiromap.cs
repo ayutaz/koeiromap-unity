@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace KoeiromapUnity.Scripts
+namespace KoeiromapUnity.Core
 {
     public static class Koeiromap
     {

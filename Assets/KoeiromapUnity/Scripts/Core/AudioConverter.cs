@@ -3,7 +3,7 @@ using System.IO;
 using NAudio.Wave;
 using UnityEngine;
 
-namespace KoeiromapUnity.Scripts
+namespace KoeiromapUnity.Core
 {
     public static class AudioConverter
     {
