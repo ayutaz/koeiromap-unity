@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace KoeiromapUnity.Editor
+namespace Editor
 {
     public class PackageExporter
     {
