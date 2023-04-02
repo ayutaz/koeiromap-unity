@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Editor
 {
-    public class PackageExporter
+    public static class PackageExporter
     {
-        public const string RootDirectory = "Assets/KoeiromapUnity/Scripts";
-        public const string FileName = "KoeiromapUnity";
+        private const string RootDirectory = "Assets/KoeiromapUnity/Scripts";
+        private const string FileName = "KoeiromapUnity";
 
         /// <summary>
         ///     パッケージの書き出し(エディタ上でのテスト用)
@@ -37,7 +37,7 @@ namespace Editor
             CreatePackage(RootDirectory, $"build/{FileName}.unitypackage");
         }
 
-        public static void CreatePackage(string rootDirectory, string exportPath)
+        private static void CreatePackage(string rootDirectory, string exportPath)
         {
             SafeCreateDirectory(exportPath);
             var assetsPaths = GetAllAssetsAtPath(rootDirectory);
@@ -46,14 +46,14 @@ namespace Editor
                 $"Export complete: {Path.GetFullPath(exportPath)}\nExport below files:\n{string.Join("\n", assetsPaths)}");
         }
 
-        public static DirectoryInfo SafeCreateDirectory(string path)
+        private static DirectoryInfo SafeCreateDirectory(string path)
         {
             var diParent = Directory.GetParent(path);
             if (diParent == null || Directory.Exists(diParent.FullName)) return null;
             return Directory.CreateDirectory(diParent.FullName);
         }
 
-        public static string[] GetAllAssetsAtPath(string root)
+        private static string[] GetAllAssetsAtPath(string root)
         {
             return Directory.GetFiles(root, "*", SearchOption.AllDirectories)
                 .Where(x => !string.IsNullOrEmpty(x))
