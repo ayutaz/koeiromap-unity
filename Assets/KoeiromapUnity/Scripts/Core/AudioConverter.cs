@@ -20,6 +20,11 @@ namespace KoeiromapUnity.Core
             return memoryStream;
         }
 
+        /// <summary>
+        ///     Converts a byte array representing audio data into an AudioClip.
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
         public static AudioClip GetAudio(byte[] bytes)
         {
             var headerStream = ConvertByteArrayToMemoryStream(bytes);
