@@ -11,6 +11,12 @@ namespace KoeiromapUnity.Core
     {
         private const string ApiUrl = "https://api.rinna.co.jp/models/cttse/koeiro";
 
+        /// <summary>
+        ///     Get the audio clip and base64 data of the voice.
+        /// </summary>
+        /// <param name="voiceParameters"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public static async UniTask<VoiceResult> GetVoice(VoiceParam voiceParameters, CancellationToken token)
         {
             var response = await SendVoiceRequest(voiceParameters, token);
@@ -20,6 +26,7 @@ namespace KoeiromapUnity.Core
             return new VoiceResult
             {
                 audioClip = audioClip,
+                audioBase64 = base64Data,
                 phonemes = response.phonemes,
                 seed = response.seed
             };

@@ -1,37 +1,41 @@
-﻿using System.IO;
-using NAudio.Wave;
-using UnityEngine;
+﻿using System;
+using System.IO;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 
 namespace KoeiromapUnity.Util
 {
-    public class AudioFile
+    public static class AudioFile
     {
-        public static void Save(string path, AudioClip audioClip)
+        /// <summary>
+        ///     Specify the folder name and phial name (including extension) to save the audio file.
+        /// </summary>
+        /// <param name="audioBase64Data"></param>
+        /// <param name="folderPath"></param>
+        /// <param name="fileName"></param>
+        /// <param name="token"></param>
+        public static async UniTask Save(string audioBase64Data, string folderPath, string fileName,
+            CancellationToken token)
         {
-            var extension = GetFileExtension(path);
-            if (extension.Equals(".wav"))
-                SaveAudioClipToWav(audioClip, path);
-            else
-                Debug.LogError("Not supported file extension: " + extension);
+            if (string.IsNullOrEmpty(audioBase64Data)) throw new NullReferenceException("audioBase64Data is null.");
+
+            var audioBytes = Convert.FromBase64String(audioBase64Data);
+            if (!Directory.Exists(folderPath)) Directory.CreateDirectory(folderPath);
+            var filePath = Path.Combine(folderPath, fileName);
+            await File.WriteAllBytesAsync(filePath, audioBytes, token);
         }
 
-        private static string GetFileExtension(string filePath)
+        /// <summary>
+        ///     Specify the phial name (including extension) to save the audio file.
+        /// </summary>
+        /// <param name="audioBase64Data"></param>
+        /// <param name="filePath"></param>
+        /// <param name="token"></param>
+        public static async UniTask Save(string audioBase64Data, string filePath, CancellationToken token)
         {
-            return Path.GetExtension(filePath);
-        }
-
-        private static void SaveAudioClipToWav(AudioClip audioClip, string outputPath)
-        {
-            var samples = new float[audioClip.samples * audioClip.channels];
-            audioClip.GetData(samples, 0);
-
-            using var waveFileWriter =
-                new WaveFileWriter(outputPath, new WaveFormat(audioClip.frequency, 16, audioClip.channels));
-            foreach (var sample in samples)
-            {
-                int sampleAsInt = (short)(sample * short.MaxValue);
-                waveFileWriter.WriteSample(sampleAsInt);
-            }
+            var folderPath = Path.GetDirectoryName(filePath);
+            if (folderPath == null) throw new NullReferenceException("folderPath is null.");
+            await Save(audioBase64Data, folderPath, filePath, token);
         }
     }
 }
