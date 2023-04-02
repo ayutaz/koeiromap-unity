@@ -20,7 +20,6 @@ You can change the parameters and play any voice on the following screen from th
 - [requirements](#requirements)
 - [how to use](#how-to-use)
   - [Sample Code](#sample-code)
-  - [Build for Windows](#build-for-windows)
 - [3rd Party Notices](#3rd-party-notices)
 - [License](#license)
 
@@ -40,7 +39,6 @@ You can change the parameters and play any voice on the following screen from th
 
 # requirements
 * Unity 2021.3.x or later
-  * IL2CPP(Windows)
 * [UniTask](https://github.com/Cysharp/UniTask)
 
 # how to use
@@ -51,21 +49,18 @@ You can change the parameters and play any voice on the following screen from th
 
 var voiceParam = new VoiceParam
 {
-    text = "こんにちは",
-    speaker_x = 3f,
-    speaker_y = 3f,
+    text = "Hello",
+    speaker_x = 2.0f,
+    speaker_y = 2.0f,
     style = "talk",
-    seed = "12345"
+    seed = "1234567890",
 };
-var option = new Option($"{Application.dataPath}/voice");
-var voice = await KoeiromapExtensions.GetVoice(voiceParam, _token, option);
+var voice = await Koeiromap.GetVoice(voiceParam, _cancellationTokenSource.Token);
 _audioSource.clip = voice.audioClip;
+_audioStringData = voice.audioBase64;
 _audioSource.Play();
 
 ```
-
-## Build for Windows
-* Switch to Windows platform and IL2CPP
 
 # 3rd Party Notices
 
