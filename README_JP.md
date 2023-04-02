@@ -39,7 +39,6 @@ Koeiromapを利用するためのUnity用ライブラリ
 
 # 要件
 * Unity 2021.3.x またはそれ以降
-  * IL2CPP(Windows)
 * [UniTask](https://github.com/Cysharp/UniTask)
 
 # 使い方
