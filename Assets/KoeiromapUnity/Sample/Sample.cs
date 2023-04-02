@@ -1,5 +1,7 @@
+using System.IO;
 using System.Threading;
-using KoeiromapUnity.Scripts;
+using KoeiromapUnity.Core;
+using KoeiromapUnity.Util;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +11,6 @@ namespace KoeiromapUnity.Sample
     [RequireComponent(typeof(AudioSource))]
     public class Sample : MonoBehaviour
     {
-        private AudioSource _audioSource;
         [SerializeField] private TMP_InputField inputText;
         [SerializeField] private Slider xValueSlider;
         [SerializeField] private TMP_InputField xValueInputValue;
@@ -18,6 +19,9 @@ namespace KoeiromapUnity.Sample
         [SerializeField] private TMP_Dropdown talkStyleDropdown;
         [SerializeField] private TMP_InputField seed;
         [SerializeField] private Button playVoiceButton;
+        [SerializeField] private Button saveVoiceButton;
+        private AudioSource _audioSource;
+        private string _audioStringData;
         private CancellationTokenSource _cancellationTokenSource;
 
         private void Awake()
@@ -55,11 +59,24 @@ namespace KoeiromapUnity.Sample
                     style = talkStyleDropdown.options[talkStyleDropdown.value].text,
                     seed = seed.text?.Length > 0 ? seed.text : Random.Range(-99999, 99999).ToString()
                 };
-                var option = new Option($"{Application.dataPath}/voice");
-                var voice = await KoeiromapExtensions.GetVoice(voiceParam, _cancellationTokenSource.Token, option);
+                var voice = await Koeiromap.GetVoice(voiceParam, _cancellationTokenSource.Token);
                 _audioSource.clip = voice.audioClip;
+                _audioStringData = voice.audioBase64;
                 _audioSource.Play();
+
+                saveVoiceButton.interactable = true;
             });
+
+#if UNITY_STANDALONE
+            var folderPath = Path.Combine(Application.persistentDataPath, "yousan", "koeiromap-unity");
+            var token = _cancellationTokenSource.Token;
+            saveVoiceButton.onClick.AddListener(() =>
+            {
+                AudioFile.Save(_audioStringData, folderPath, "test.wav", token);
+            });
+#elif UNITY_WEBGL
+            saveVoiceButton.gameObject.SetActive(false);
+#endif
         }
 
         private void OnDestroy()
