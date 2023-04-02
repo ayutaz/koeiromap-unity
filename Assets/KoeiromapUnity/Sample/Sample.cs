@@ -63,6 +63,8 @@ namespace KoeiromapUnity.Sample
                 _audioSource.clip = voice.audioClip;
                 _audioStringData = voice.audioBase64;
                 _audioSource.Play();
+
+                saveVoiceButton.interactable = true;
             });
 
 #if UNITY_STANDALONE
