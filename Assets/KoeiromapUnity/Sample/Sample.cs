@@ -1,5 +1,6 @@
 using System.IO;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using KoeiromapUnity.Core;
 using KoeiromapUnity.Util;
 using TMPro;
@@ -68,11 +69,11 @@ namespace KoeiromapUnity.Sample
             });
 
 #if UNITY_STANDALONE
-            var folderPath = Path.Combine(Application.persistentDataPath, "yousan", "koeiromap-unity");
+            var filePath = Path.Combine(Application.persistentDataPath, "test.wav");
             var token = _cancellationTokenSource.Token;
             saveVoiceButton.onClick.AddListener(() =>
             {
-                AudioFileUtility.Save(_audioStringData, folderPath, "test.wav", token);
+                AudioFileUtility.Save(_audioStringData, filePath, token).Forget();
             });
 #elif UNITY_WEBGL
             saveVoiceButton.gameObject.SetActive(false);
