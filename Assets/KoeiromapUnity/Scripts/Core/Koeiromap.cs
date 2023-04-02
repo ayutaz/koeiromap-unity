@@ -20,6 +20,7 @@ namespace KoeiromapUnity.Core
             return new VoiceResult
             {
                 audioClip = audioClip,
+                audioBase64 = base64Data,
                 phonemes = response.phonemes,
                 seed = response.seed
             };

@@ -8,6 +8,7 @@ namespace KoeiromapUnity.Core
     public class VoiceResult
     {
         public AudioClip audioClip;
+        public string audioBase64;
         public List<string> phonemes;
         public int seed;
     }
