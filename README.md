@@ -4,6 +4,10 @@ Library for Unity to use Koeiromap
 
 [日本語ドキュメント(Japanese Documents Available)](README_JP.md).
 
+Since it is very difficult to find the ideal voice by changing each parameter in Koeiromap, we are developing the following tool "KoeiromapIndex" to support finding the ideal voice.
+
+[koeiromap-index](https://github.com/ayutaz/koeiromap-index)
+
 ## Demo
 
 You can change the parameters and play any voice on the following screen from the [demo page](https://ayutaz.github.io/koeiromap-unity/WebGL/).
