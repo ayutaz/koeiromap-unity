@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 
 namespace KoeiromapUnity.Util
 {
-    public static class AudioFile
+    public static class AudioFileUtility
     {
         /// <summary>
         ///     Specify the folder name and phial name (including extension) to save the audio file.

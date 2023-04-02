@@ -72,7 +72,7 @@ namespace KoeiromapUnity.Sample
             var token = _cancellationTokenSource.Token;
             saveVoiceButton.onClick.AddListener(() =>
             {
-                AudioFile.Save(_audioStringData, folderPath, "test.wav", token);
+                AudioFileUtility.Save(_audioStringData, folderPath, "test.wav", token);
             });
 #elif UNITY_WEBGL
             saveVoiceButton.gameObject.SetActive(false);
