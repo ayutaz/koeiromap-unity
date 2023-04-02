@@ -4,6 +4,10 @@ Koeiromapを利用するためのUnity用ライブラリ
 
 [English Documents Available(英語ドキュメント)](README.md)
 
+Koeiromapで各パラメータを変更して理想の声を探すのはとても大変なため、理想の声を探し出すサポートするためのツール「KoeiromapIndex」を以下で開発しています。
+
+[koeiromap-index](https://github.com/ayutaz/koeiromap-index)
+
 ## Demo
 
 [デモページ](https://ayutaz.github.io/koeiromap-unity/WebGL/)から以下のような画面でパラメータを変更して、任意の声を再生することができます。
@@ -39,7 +43,6 @@ Koeiromapを利用するためのUnity用ライブラリ
 
 # 要件
 * Unity 2021.3.x またはそれ以降
-  * IL2CPP(Windows)
 * [UniTask](https://github.com/Cysharp/UniTask)
 
 # 使い方
